@@ -2,19 +2,19 @@ import praw
 import time
 from datetime import datetime
 import random
+from config import *
+
 
 class RedditEngagementBot:
     def __init__(self):
-        # Initialize Reddit instance (in real project, use config file for credentials)
         self.reddit = praw.Reddit(
-            client_id='YOUR_CLIENT_ID',
-            client_secret='YOUR_CLIENT_SECRET',
-            username='YOUR_USERNAME',
-            password='YOUR_PASSWORD',
-            user_agent='EngagementBot/1.0'
+            client_id=REDDIT_CLIENT_ID,
+            client_secret=REDDIT_CLIENT_SECRET,
+            username=REDDIT_USERNAME,
+            password=REDDIT_PASSWORD,
+            user_agent=USER_AGENT
         )
         
-        # Configuration (would come from config in real project)
         self.subreddits = ['test', 'Python']
         self.keywords = ['health', 'wellness', 'medicine']
         self.min_post_age = 30
